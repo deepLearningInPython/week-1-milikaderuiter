@@ -10,13 +10,12 @@ import numpy
 #If the number is larger than zero, the function should return 1, otherwise is should return -1.
 #The name of the function should be step
 
-# Your code here:
-# -----------------------------------------------
 
-def step
-
-
-# -----------------------------------------------
+def step(num):
+    if num > 0:
+        return 1
+    else:
+        return -1
 
 
 # Task 2:
@@ -26,12 +25,9 @@ def step
 #The name of the function should be ReLu
 
 
-# Your code here:
-# -----------------------------------------------
-def ReLu
-
-
-# -----------------------------------------------
+def ReLu(np_array, cutoff = 0):
+    np_array = numpy.array(np_array)
+    return numpy.where(np_array < cutoff, cutoff, np_array)
 
 
 # Task 3:
@@ -41,10 +37,8 @@ def ReLu
 #Next, apply the ReLu function from above to the resulting matrix and return the result.
 #Name the function neural_net_layer
 
-# Your code here:
-# -----------------------------------------------
+def neural_net_layer(matrix, vector):
+    M = matrix @ vector
+    return ReLu(M)
 
-def neural_net_layer
-
-
-# ------------------------------------------
+    
